@@ -200,3 +200,125 @@ x = 'aassbbc'
 
 c= x[0]
 [c == (c:=i) for i in x[1:]][::2]
+# %%
+
+
+with open('countries.csv', 'w') as file:
+    writer = csv.writer(file, delimiter = ',')
+    writer.writerow("Country,Population,Square,Country")
+    for country in countries:
+        writer.writerow(country)
+
+csv.writer(file) csv.reader(file)
+
+writer.wtiterOW
+
+@dataclass
+class Book:
+# %%
+from pydantic import BaseModel
+
+class City(BaseModel):
+    id: int
+    name: str
+    population: int
+
+class City(BaseModel):
+    id: int
+    name: str
+    pop: int
+
+class City(BaseModel):
+    id: int
+    name: str = Field(alias='nama')
+    pop: int
+
+city = City.parse_raw(jsn)
+city = City.parse_raw(jsn)
+city = City.parse_raw(jsn)
+city = City.parse_raw(jsn)
+
+from typing import Optional, List
+import json
+
+class Book(BaseModel):
+    title: str
+    author: str
+    price: float
+
+with open() as file:
+    data = json.load(file)
+    books: List[Book] = [Book(**item) for item in data]
+    books = [Book(**item) for item in data]
+
+# %%
+def divmod(x,y):
+    Divmod = namedtuple('Divmod', 'a b')
+    return Divmod(x, x//y)
+    DivMod = namedtuple('DivMod', 'a b')
+    Car = namedtuple('Car', 'a b')
+    return Car(**)
+
+# %%
+from enum import Enum, auto
+from dataclasses import dataclass
+
+class Day(Enum):
+    ONE = 1
+    TWO = 2
+class Note(Enum):
+    DO = auto()
+    RE = auto()
+
+class Car(Enum):
+    MUS = 1
+    TA = 2
+
+class Role(Enum):
+    PRES = auto()
+    VICE = auto()
+    MAN = auto()
+    SUBST = auto()
+    SECRET = auto()
+    LEAD = auto()
+    WORKER = auto()
+
+@dataclass
+class Emp:
+    name: str
+    id: int
+    role: Role
+
+# %%
+
+def memo(func):
+    cache = {}
+    def wrapper(*args, **kwargs):
+        if str(args)+str(kwargs) not in cache:
+            result = func(*args, **kwargs)
+            cache[str(args)+str(kwargs)] = result
+        else:
+            print('memoized')
+            result = cache[str(args)+str(kwargs)]
+            return result
+
+    return wrapper
+
+def memoize(func):
+    cache = dict()
+    def wrapper(*args, **kwargs):
+        key = str(args) + str(kwargs)
+        if key not in cache:
+            cache[key] = func(*args, **kwargs)
+        else:
+            print('memoized...')
+        return cache[key]
+    return wrapper
+
+
+@memo
+def hii():
+    return 23
+
+
+    
