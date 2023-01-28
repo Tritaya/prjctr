@@ -4,7 +4,7 @@ import requests
 import json
 from pprint import pprint
 
-token = '716b2de347d59aa615cc11568c41f6d2'
+token = ''
 url = 'https://api.openweathermap.org/data/2.5/weather'
 
 # просто вирішив так спробувати, в реальному житті не буду
